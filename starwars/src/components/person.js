@@ -24,7 +24,7 @@ const PersonCard = styled.div`
 function Person(props){
     const [home,setHome] = useState("Loading...");
     useEffect(()=>{
-        axios.get(props.info.homeworld).then(r=>setHome(r.data.name));
+        axios.get(props.info.homeworld).then(response=>setHome(response.data.name)).catch(error => console.log(error))
     },[props.info.homeworld]);
   
     return(

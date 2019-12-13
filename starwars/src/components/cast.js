@@ -17,8 +17,8 @@ function Cast(){
     useEffect(()=>{
         axios
             .get("https://swapi.co/api/people/")
-            .then(r=>setCast(r.data.results))
-            .catch(e=>console.log(e));
+            .then(response=>setCast(response.data.results))
+            .catch(error=>console.log(error));
     },[]);
     if(!cast) return null;
     return(
